@@ -58,7 +58,9 @@
       "WebSearch",
       "WebFetch(domain:github.com)",
       "mcp__neo4j-memory__create_memory",
-      "mcp__neo4j-memory__create_connection"
+      "mcp__neo4j-memory__create_connection",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
