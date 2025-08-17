@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(spctl:*)",
+      "Bash(brew:*)",
+      "Bash(npm config get:*)",
+      "Bash(mcp list:*)",
+      "Bash(npx:*)",
+      "Bash(npm config:*)",
+      "Bash(defaults write:*)",
+      "Bash(git config:*)",
+      "Bash(env)",
+      "Bash(killall:*)",
+      "Bash(npm config:*)",
+      "Bash(claude mcp list:*)",
+      "Bash(defaults write:*)",
+      "Bash(python3.12:*)",
+      "Bash(uv sync:*)",
+      "Bash(uv run:*)",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "Bash(uv add:*)",
+      "Bash(python3:*)",
+      "Bash(rm:*)",
+      "Bash(npm install)",
+      "Bash(neo4j:*)",
+      "Bash(mkdir:*)",
+      "Bash(curl:*)",
+      "Bash(cat:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

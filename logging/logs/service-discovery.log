@@ -1,0 +1,237 @@
+2025-08-14 02:25:04,101 - __main__ - INFO - __init__:387 - 🔍 Inicializando Service Discovery System...
+2025-08-14 02:25:04,101 - __main__ - INFO - __init__:408 - 📁 Project root: /Users/agents/Desktop/claude-20x/.conductor/dalat
+2025-08-14 02:25:04,101 - __main__ - INFO - __init__:409 - 🔍 Scan ranges: [('localhost', range(3000, 4001))]
+2025-08-14 02:25:04,101 - __main__ - INFO - __init__:410 - ⏱️ Scan interval: 30s
+2025-08-14 02:25:04,101 - __main__ - INFO - __init__:411 - 🤖 Known agents: ['helloworld', 'marvin', 'gemini', 'ui', 'analytics', 'a2a-inspector']
+2025-08-14 02:25:04,101 - __main__ - INFO - _discovery_worker:1405 - 🔄 Iniciando worker de descoberta contínua
+2025-08-14 02:25:04,101 - __main__ - INFO - __init__:415 - ✅ Service Discovery inicializado com sucesso
+2025-08-14 02:25:04,103 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-14 02:25:04,116 - __main__ - INFO - stop:1489 - 🛑 Parando Service Discovery...
+2025-08-14 02:25:04,240 - __main__ - ERROR - _create_agent_from_card:1029 - Erro ao criar agente a partir do card: 'list' object has no attribute 'get'
+2025-08-14 02:25:04,303 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 3 agentes conhecidos
+2025-08-14 02:25:04,471 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-14 02:25:04,471 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-14 02:25:04,471 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 3 agentes únicos em 0.37s
+2025-08-14 02:25:09,117 - __main__ - INFO - stop:1495 - ✅ Service Discovery parado com sucesso
+2025-08-14 02:48:36,898 - __main__ - INFO - __init__:387 - 🔍 Inicializando Service Discovery System...
+2025-08-14 02:48:36,898 - __main__ - INFO - __init__:408 - 📁 Project root: /Users/agents/Desktop/claude-20x/.conductor/dalat
+2025-08-14 02:48:36,898 - __main__ - INFO - __init__:409 - 🔍 Scan ranges: [('localhost', range(3000, 4001))]
+2025-08-14 02:48:36,898 - __main__ - INFO - __init__:410 - ⏱️ Scan interval: 30s
+2025-08-14 02:48:36,898 - __main__ - INFO - __init__:411 - 🤖 Known agents: ['helloworld', 'marvin', 'gemini', 'ui', 'analytics', 'a2a-inspector']
+2025-08-14 02:48:36,899 - __main__ - INFO - _discovery_worker:1405 - 🔄 Iniciando worker de descoberta contínua
+2025-08-14 02:48:36,899 - __main__ - INFO - __init__:415 - ✅ Service Discovery inicializado com sucesso
+2025-08-14 02:48:36,900 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-14 02:48:36,934 - __main__ - INFO - stop:1489 - 🛑 Parando Service Discovery...
+2025-08-14 02:48:37,026 - __main__ - ERROR - _create_agent_from_card:1029 - Erro ao criar agente a partir do card: 'list' object has no attribute 'get'
+2025-08-14 02:48:37,101 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 3 agentes conhecidos
+2025-08-14 02:48:37,236 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-14 02:48:37,244 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-14 02:48:37,244 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 3 agentes únicos em 0.34s
+2025-08-14 02:48:41,940 - __main__ - INFO - stop:1495 - ✅ Service Discovery parado com sucesso
+2025-08-14 02:56:54,372 - __main__ - INFO - __init__:387 - 🔍 Inicializando Service Discovery System...
+2025-08-14 02:56:54,372 - __main__ - INFO - __init__:408 - 📁 Project root: /Users/agents/Desktop/claude-20x/.conductor/dalat
+2025-08-14 02:56:54,372 - __main__ - INFO - __init__:409 - 🔍 Scan ranges: [('localhost', range(3000, 4001))]
+2025-08-14 02:56:54,372 - __main__ - INFO - __init__:410 - ⏱️ Scan interval: 30s
+2025-08-14 02:56:54,372 - __main__ - INFO - __init__:411 - 🤖 Known agents: ['helloworld', 'marvin', 'gemini', 'ui', 'analytics', 'a2a-inspector']
+2025-08-14 02:56:54,372 - __main__ - INFO - _discovery_worker:1405 - 🔄 Iniciando worker de descoberta contínua
+2025-08-14 02:56:54,372 - __main__ - INFO - __init__:415 - ✅ Service Discovery inicializado com sucesso
+2025-08-14 02:56:54,374 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-14 02:56:54,388 - __main__ - INFO - stop:1489 - 🛑 Parando Service Discovery...
+2025-08-14 02:56:54,433 - __main__ - ERROR - _create_agent_from_card:1029 - Erro ao criar agente a partir do card: 'list' object has no attribute 'get'
+2025-08-14 02:56:54,476 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 3 agentes conhecidos
+2025-08-14 02:56:54,617 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-14 02:56:54,626 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-14 02:56:54,626 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 3 agentes únicos em 0.25s
+2025-08-14 02:56:59,394 - __main__ - INFO - stop:1495 - ✅ Service Discovery parado com sucesso
+2025-08-17 01:41:41,958 - __main__ - INFO - __init__:387 - 🔍 Inicializando Service Discovery System...
+2025-08-17 01:41:41,959 - __main__ - INFO - __init__:408 - 📁 Project root: /Users/2a/.claude
+2025-08-17 01:41:41,959 - __main__ - INFO - __init__:409 - 🔍 Scan ranges: [('localhost', range(3000, 4001))]
+2025-08-17 01:41:41,959 - __main__ - INFO - __init__:410 - ⏱️ Scan interval: 30s
+2025-08-17 01:41:41,959 - __main__ - INFO - __init__:411 - 🤖 Known agents: ['helloworld', 'marvin', 'gemini', 'ui', 'analytics', 'a2a-inspector']
+2025-08-17 01:41:41,959 - __main__ - INFO - _discovery_worker:1405 - 🔄 Iniciando worker de descoberta contínua
+2025-08-17 01:41:41,959 - __main__ - INFO - __init__:415 - ✅ Service Discovery inicializado com sucesso
+2025-08-17 01:41:41,961 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:41:41,974 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:41:42,179 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:41:42,192 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:41:42,192 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.23s
+2025-08-17 01:42:12,198 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:42:12,202 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:42:12,387 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:42:12,404 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:42:12,404 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.21s
+2025-08-17 01:42:42,410 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:42:42,419 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:42:42,627 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:42:42,651 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:42:42,651 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.24s
+2025-08-17 01:43:12,658 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:43:12,668 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:43:12,847 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:43:12,855 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:43:12,855 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.19s
+2025-08-17 01:43:42,859 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:43:42,866 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:43:43,055 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:43:43,064 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:43:43,064 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.20s
+2025-08-17 01:44:13,072 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:44:13,078 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:44:13,259 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:44:13,268 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:44:13,268 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.20s
+2025-08-17 01:44:43,281 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:44:43,323 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:44:44,117 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:44:44,153 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:44:44,153 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.87s
+2025-08-17 01:45:14,164 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:45:14,192 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:45:14,757 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:45:14,768 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:45:14,768 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.60s
+2025-08-17 01:45:44,780 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:45:44,811 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:45:45,206 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:45:45,215 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:45:45,215 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.43s
+2025-08-17 01:46:15,219 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:46:15,237 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:46:15,972 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:46:16,016 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:46:16,016 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.80s
+2025-08-17 01:46:46,024 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:46:46,035 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:46:46,800 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:46:46,815 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:46:46,816 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.79s
+2025-08-17 01:47:16,820 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:47:16,825 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:47:17,135 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:47:17,151 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:47:17,152 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.33s
+2025-08-17 01:47:47,158 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:47:47,184 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:47:47,883 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:47:47,930 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:47:47,930 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.77s
+2025-08-17 01:48:17,935 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:48:17,949 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:48:18,974 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:48:19,085 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:48:19,085 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 1.15s
+2025-08-17 01:48:49,105 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:48:49,126 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:48:50,078 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:48:50,093 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:48:50,093 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.99s
+2025-08-17 01:49:20,096 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:49:20,102 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:49:21,122 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:49:21,192 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:49:21,192 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 1.10s
+2025-08-17 01:49:51,204 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:49:51,239 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:49:52,104 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:49:52,129 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:49:52,129 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.92s
+2025-08-17 01:50:22,145 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:50:22,157 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:50:23,129 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:50:23,146 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:50:23,146 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 1.00s
+2025-08-17 01:50:53,155 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:50:53,164 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:50:53,339 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:50:53,347 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:50:53,347 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.19s
+2025-08-17 01:51:23,351 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:51:23,355 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:51:23,541 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:51:23,550 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:51:23,550 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.20s
+2025-08-17 01:51:53,552 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:51:53,559 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:51:53,757 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:51:53,782 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:51:53,782 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.23s
+2025-08-17 01:52:23,786 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:52:23,792 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:52:23,983 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:52:24,004 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:52:24,004 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.22s
+2025-08-17 01:52:54,009 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:52:54,014 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:52:54,223 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:52:54,282 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:52:54,282 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.27s
+2025-08-17 01:53:24,289 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:53:24,299 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:53:24,519 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 0 agentes por scan
+2025-08-17 01:53:24,570 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:53:24,570 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 0 agentes únicos em 0.28s
+2025-08-17 01:53:54,575 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:53:54,581 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:53:54,828 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:53:54,881 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:53:54,882 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.30s
+2025-08-17 01:54:24,885 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:54:24,895 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:54:25,079 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:54:25,123 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:54:25,123 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.24s
+2025-08-17 01:54:55,133 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:54:55,144 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:54:55,507 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:54:55,557 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:54:55,557 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.42s
+2025-08-17 01:55:25,582 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:55:25,589 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:55:25,791 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:55:25,820 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:55:25,820 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.24s
+2025-08-17 01:55:55,840 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:55:55,851 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:55:56,052 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:55:56,105 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:55:56,106 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.26s
+2025-08-17 01:56:26,117 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:56:26,128 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:56:26,302 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:56:26,348 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:56:26,348 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.23s
+2025-08-17 01:56:56,355 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:56:56,361 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:56:56,570 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:56:56,619 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:56:56,620 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.26s
+2025-08-17 01:57:26,623 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:57:26,630 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:57:26,816 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:57:26,841 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:57:26,841 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.22s
+2025-08-17 01:57:56,847 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:57:56,853 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:57:57,043 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:57:57,064 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:57:57,064 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.22s
+2025-08-17 01:58:27,070 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:58:27,076 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:58:27,257 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:58:27,281 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:58:27,282 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.21s
+2025-08-17 01:58:57,285 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:58:57,291 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:58:57,479 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:58:57,529 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:58:57,529 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.24s
+2025-08-17 01:59:27,535 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:59:27,574 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:59:27,816 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:59:27,860 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:59:27,860 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.32s
+2025-08-17 01:59:57,864 - __main__ - INFO - discover_agents:471 - 🔍 Iniciando descoberta de agentes...
+2025-08-17 01:59:57,871 - __main__ - INFO - discover_agents:486 - 🎯 Descobertos 0 agentes conhecidos
+2025-08-17 01:59:58,073 - __main__ - INFO - discover_agents:494 - 🔍 Descobertos 1 agentes por scan
+2025-08-17 01:59:58,107 - __main__ - INFO - discover_agents:502 - 📋 Descobertos 0 agentes por config
+2025-08-17 01:59:58,107 - __main__ - INFO - discover_agents:519 - ✅ Descoberta concluída: 1 agentes únicos em 0.24s

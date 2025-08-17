@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Matar processos relacionados aos Ajustes do Sistema",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Desativar analytics do Homebrew",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Desativar telemetria do NPM",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Configurar crash reports do macOS",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Adicionar variáveis de ambiente de privacidade",
+    "status": "completed",
+    "id": "5"
+  }
+]

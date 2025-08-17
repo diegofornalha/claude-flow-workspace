@@ -1,0 +1,53 @@
+{
+  "name": "@knowall-ai/mcp-neo4j-agent-memory",
+  "version": "0.2.5",
+  "description": "Graph-based memory system for AI agents. Store people, places, organizations as nodes. Build semantic relationships (KNOWS, WORKS_AT, CREATED). Word-tokenized search finds partial matches. Filter by date, traverse relationships, maintain temporal context. Simple tools, LLM handles complexity. 10 tools for complete memory management.",
+  "type": "module",
+  "module": "./src/index.ts",
+  "bin": {
+    "mcp-neo4j-agent-memory": "build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "dotenv": "^17.2.0",
+    "neo4j-driver": "^5.27.0",
+    "uuid": "^11.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "mcp",
+    "neo4j",
+    "graph-database",
+    "claude",
+    "ai-memory",
+    "voice-assistant",
+    "agent-memory",
+    "knowledge-graph"
+  ],
+  "author": "KnowAll AI",
+  "contributors": [
+    "Daichi Okazaki (original author)"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KnowAll-AI/mcp-neo4j-agent-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KnowAll-AI/mcp-neo4j-agent-memory/issues"
+  },
+  "homepage": "https://github.com/KnowAll-AI/mcp-neo4j-agent-memory#readme"
+}
