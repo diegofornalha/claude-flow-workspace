@@ -51,7 +51,14 @@
       "mcp__neo4j-memory__search_memories",
       "WebFetch(domain:localhost)",
       "Bash(npm start)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "mcp__wonderwhy-er-desktop-commander__list_directory",
+      "mcp__wonderwhy-er-desktop-commander__read_file",
+      "mcp__upstash-context-7-mcp__resolve-library-id",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "mcp__neo4j-memory__create_memory",
+      "mcp__neo4j-memory__create_connection"
     ],
     "deny": [],
     "ask": []
