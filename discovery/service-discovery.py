@@ -38,7 +38,12 @@ from functools import wraps
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import get_config, Config
+from config.unified_config import get_unified_config, UnifiedConfig
+from common.validators import InputValidator
+
+# Compatibility aliases
+get_config = get_unified_config
+Config = UnifiedConfig
 
 # Configurar logging com base nas configurações
 config = get_config()
@@ -79,56 +84,6 @@ class AgentUnreachableError(ServiceDiscoveryError):
     """Agente não alcançável"""
     pass
 
-
-# ========== VALIDADORES ==========
-
-class InputValidator:
-    """Classe para validação de entradas"""
-    
-    @staticmethod
-    def validate_host(host: str) -> str:
-        """Valida host de entrada"""
-        if not host or not isinstance(host, str):
-            raise ValueError("Host deve ser uma string não vazia")
-        
-        host = host.strip()
-        if not host:
-            raise ValueError("Host não pode estar vazio")
-        
-        # Permitir apenas hosts seguros
-        allowed_hosts = ['localhost', '127.0.0.1', '0.0.0.0']
-        if host not in allowed_hosts and not host.startswith('192.168.') and not host.startswith('10.'):
-            logger.warning(f"Host potencialmente inseguro: {host}")
-        
-        return host
-    
-    @staticmethod
-    def validate_port(port: Union[int, str]) -> int:
-        """Valida porta de entrada"""
-        try:
-            port_num = int(port)
-        except (ValueError, TypeError):
-            raise ValueError(f"Porta deve ser um número inteiro, recebido: {port}")
-        
-        if not (1 <= port_num <= 65535):
-            raise ValueError(f"Porta deve estar entre 1 e 65535, recebido: {port_num}")
-        
-        return port_num
-    
-    @staticmethod
-    def validate_url(url: str) -> str:
-        """Valida URL de entrada"""
-        if not url or not isinstance(url, str):
-            raise ValueError("URL deve ser uma string não vazia")
-        
-        url = url.strip()
-        if not url:
-            raise ValueError("URL não pode estar vazia")
-        
-        if not (url.startswith('http://') or url.startswith('https://')):
-            raise ValueError(f"URL deve começar com http:// ou https://, recebido: {url}")
-        
-        return url
 
 
 # ========== CIRCUIT BREAKER ==========

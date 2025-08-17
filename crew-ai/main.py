@@ -6,7 +6,10 @@ import json
 from datetime import datetime
 from sistema_multi_agente_neo4j.crew import SistemaMultiAgenteNeo4jCrew
 from tools.telemetry_callbacks import Neo4jTelemetryCallbacks
-from config.settings import settings
+from config.unified_config import get_unified_config
+
+# Compatibility alias
+settings = get_unified_config()
 
 # This main file is intended to be a way for your to run your
 # crew locally, so refrain from adding unnecessary logic into this file.

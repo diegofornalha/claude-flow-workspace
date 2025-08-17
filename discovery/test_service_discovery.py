@@ -15,16 +15,19 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from service_discovery import (
     ServiceDiscovery, 
-    InputValidator, 
     retry_with_backoff,
     CircuitBreaker,
     CircuitBreakerConfig,
     AgentStatus
 )
+from common.validators import InputValidator
 
 # Importar config do diretório parent
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import get_config
+from config.unified_config import get_unified_config
+
+# Compatibility alias
+get_config = get_unified_config
 
 async def test_input_validator():
     """Testa o validador de entradas"""

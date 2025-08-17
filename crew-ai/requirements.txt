@@ -1,19 +1,65 @@
-# Core Dependencies
+# ===============================================
+# REQUIREMENTS.TXT - Sistema CrewAI Unificado
+# ===============================================
+# 
+# Este arquivo contém apenas dependências específicas do CrewAI
+# que não estão no pyproject.toml principal do projeto.
+# 
+# Para instalar todas as dependências:
+# 1. pip install -e . (instala pyproject.toml)
+# 2. pip install -r crew-ai/requirements.txt (instala específicas do CrewAI)
+# ===============================================
+
+# =====================================
+# DEPENDÊNCIAS CORE CREWAI
+# =====================================
+# CrewAI framework e ferramentas específicas
 crewai>=0.1.0
 crewai-tools>=0.1.0
-pydantic>=2.0.0
-neo4j>=5.0.0
 
-# AI/ML Dependencies
+# =====================================
+# AI/ML ESPECÍFICOS CREWAI
+# =====================================
+# OpenAI API para modelos LLM
 openai>=1.0.0
+
+# Machine Learning para análises avançadas
 scikit-learn>=1.3.0
 numpy>=1.24.0
 
-# System Dependencies
-python-dotenv>=1.0.0
-asyncio>=3.4.3
-hashlib
+# =====================================
+# DEPENDÊNCIAS JÁ NO PYPROJECT.TOML
+# =====================================
+# As seguintes dependências já estão no pyproject.toml:
+# - aiofiles>=24.1.0
+# - aiohttp>=3.12.15
+# - fastapi>=0.116.1
+# - psutil>=7.0.0
+# - python-dotenv>=1.1.1
+# - requests>=2.32.4
+# - uvicorn>=0.35.0
 
-# Optional Performance
-psutil>=5.9.0
-concurrent-futures>=3.1.1
+# =====================================
+# DEPENDÊNCIAS ESPECÍFICAS
+# =====================================
+# Neo4j driver (específico para CrewAI com Neo4j)
+neo4j>=5.0.0
+
+# Pydantic para validação de dados
+pydantic>=2.0.0
+
+# =====================================
+# DEPENDÊNCIAS DE SISTEMA
+# =====================================
+# Asyncio está incluído no Python 3.7+
+# hashlib está incluído no Python standard library
+# concurrent-futures está incluído no Python 3.2+
+
+# =====================================
+# DEPENDÊNCIAS OPCIONAIS
+# =====================================
+# YAML support para configurações
+PyYAML>=6.0.0
+
+# Para métricas e monitoramento
+prometheus-client>=0.22.1
