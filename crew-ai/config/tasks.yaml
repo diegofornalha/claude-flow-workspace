@@ -1,0 +1,141 @@
+---
+strategic_planning:
+  description: Desenvolver um plano estratégico detalhado para {project_scope}, incluindo
+    análise de requisitos, definição de arquitetura para {target_platform}, cronograma
+    de implementação e identificação de riscos e dependências. Considerar {budget_constraints}
+    e {timeline_requirements}
+  expected_output: 'Um documento de planejamento estratégico em markdown contendo:
+    objetivos, requisitos técnicos para {target_platform}, arquitetura proposta, cronograma
+    detalhado considerando {timeline_requirements}, análise de riscos, plano de mitigação
+    e considerações de orçamento para {budget_constraints}'
+  agent: planner
+research_analysis:
+  description: Conduzir pesquisa abrangente sobre {research_topic} focando em {research_focus_area},
+    coletando informações atualizadas de fontes confiáveis, analisando tendências
+    do mercado para {target_market} e identificando melhores práticas e tecnologias
+    relevantes
+  expected_output: 'Relatório de pesquisa em markdown com: análise de mercado para
+    {target_market}, tecnologias recomendadas para {research_focus_area}, benchmarks
+    atualizados, casos de uso similares, análise de competidores e recomendações estratégicas
+    baseadas em dados'
+  agent: researcher
+mcp_coordination:
+  description: Coordenar servidores MCP e estabelecer protocolos de comunicação para
+    {project_scope}, garantindo integração entre diferentes clusters de agentes e
+    sistemas
+  expected_output: Configuração de protocolos MCP em formato JSON, documentação de
+    APIs de comunicação e mapeamento de rotas entre clusters de agentes
+  agent: mcp_manager
+  context:
+  - strategic_planning
+a2a_template_design:
+  description: Criar templates base A2A para {project_scope}, definindo estruturas
+    de dados, protocolos de comunicação, schemas de mensagens e padrões de segurança
+    para comunicação entre agentes
+  expected_output: 'Templates A2A em formato JSON/YAML com: schemas de mensagens,
+    definições de protocolo, padrões de segurança, estruturas de versionamento e documentação
+    de APIs para comunicação inter-agentes'
+  agent: a2a_template
+  context:
+  - strategic_planning
+implementation:
+  description: Implementar as funcionalidades definidas para {development_task} em
+    {programming_language}, seguindo as especificações técnicas do plano estratégico,
+    utilizando {development_framework} e aplicando as melhores práticas identificadas
+    na pesquisa
+  expected_output: 'Código fonte implementado em {programming_language} com {development_framework},
+    incluindo: estrutura do projeto, arquivos de configuração, testes unitários básicos,
+    documentação técnica completa, README detalhado e guia de instalação'
+  agent: coder
+  context:
+  - strategic_planning
+  - research_analysis
+consensus_validation:
+  description: Implementar algoritmos de consenso bizantino para validar decisões
+    críticas entre agentes em {project_scope}, garantindo consistência e tolerância
+    a falhas
+  expected_output: Implementação de algoritmo de consenso em código, relatório de
+    validação de decisões críticas e métricas de consistência do sistema
+  agent: consensus_builder
+  context:
+  - mcp_coordination
+  - research_analysis
+a2a_agent_template_implementation:
+  description: Implementar template padrão A2A para agentes em {project_scope}, estabelecendo
+    interfaces de comunicação, handlers de mensagens e middleware de protocolo para
+    garantir interoperabilidade
+  expected_output: 'Implementação de template A2A com: classes base para agentes,
+    interfaces de comunicação, handlers de protocolo, middleware de segurança e exemplos
+    de uso prático'
+  agent: a2a_agent_template
+  context:
+  - a2a_template_design
+  - mcp_coordination
+quality_assurance:
+  description: Executar testes abrangentes na implementação de {testing_scope}, aplicando
+    metodologias {testing_methodology}, validando funcionalidades em {testing_environment},
+    performance e identificando possíveis bugs ou problemas de qualidade
+  expected_output: 'Relatório de testes detalhado em markdown usando {testing_methodology}
+    incluindo: resultados dos testes funcionais, testes de performance em {testing_environment},
+    testes de segurança, lista de bugs encontrados com severidade, sugestões de melhorias
+    e status de qualidade geral com métricas'
+  agent: tester
+  context:
+  - implementation
+code_review:
+  description: Revisar o código implementado e os resultados dos testes para {review_scope},
+    analisando qualidade segundo {code_standards}, segurança usando {security_framework},
+    performance e aderência aos padrões estabelecidos, fornecendo feedback detalhado
+  expected_output: 'Relatório de revisão de código em markdown seguindo {code_standards}
+    com: análise de qualidade detalhada, vulnerabilidades de segurança identificadas
+    usando {security_framework}, sugestões de otimização de performance, conformidade
+    com padrões, métricas de código e recomendações finais priorizadas'
+  agent: reviewer
+  context:
+  - implementation
+  - quality_assurance
+a2a_coherence_validation:
+  description: Verificar coerência nas comunicações A2A para {project_scope}, validando
+    integridade de mensagens e consistência de protocolos entre todos os agentes do
+    sistema
+  expected_output: Relatório de validação A2A em markdown, matriz de coerência entre
+    agentes e recomendações para otimização de comunicação
+  agent: a2a_coherence_checker
+  context:
+  - a2a_template_design
+  - a2a_agent_template_implementation
+  - consensus_validation
+  - implementation
+  - quality_assurance
+performance_analysis:
+  description: Analisar continuamente métricas de performance de todos os agentes
+    em {project_scope}, identificar padrões de gargalos, medir tempos de execução
+    e propor otimizações para o workflow
+  expected_output: 'Relatório detalhado de análise de performance com: métricas por
+    agente, identificação de gargalos, padrões de execução, recomendações de otimização
+    e propostas de paralelização'
+  agent: performance_analyzer
+  context:
+  - implementation
+  - quality_assurance
+  - code_review
+coordination_summary:
+  description: Coordenar dinamicamente todas as operações do sistema, implementando
+    feedback loops e otimização em tempo real. Analisar métricas de performance, identificar
+    gargalos e ajustar fluxos de trabalho para {project_scope}
+  expected_output: 'Relatório executivo consolidado com: resumo do projeto, métricas
+    de performance por agente, análise de gargalos identificados, mapa de dependências
+    executadas, lições aprendidas e recomendações otimizadas para próximos passos'
+  agent: adaptive_coordinator
+  context:
+  - strategic_planning
+  - research_analysis
+  - mcp_coordination
+  - consensus_validation
+  - implementation
+  - quality_assurance
+  - code_review
+  - a2a_coherence_validation
+  - performance_analysis
+  - a2a_template_design
+  - a2a_agent_template_implementation
