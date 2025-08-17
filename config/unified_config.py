@@ -183,6 +183,137 @@ class CrewAIConfig:
     verbose: bool = field(default_factory=lambda: os.getenv("CREW_VERBOSE", "true").lower() == "true")
 
 
+@dataclass
+class ClustersConfig:
+    """Configurações do sistema de clusters"""
+    enabled: bool = field(default_factory=lambda: os.getenv("CLUSTERS_ENABLED", "true").lower() == "true")
+    
+    # Configurações do Orquestrador
+    orchestrator_enabled: bool = field(default_factory=lambda: os.getenv("ORCHESTRATOR_ENABLED", "true").lower() == "true")
+    health_check_interval: int = field(default_factory=lambda: int(os.getenv("CLUSTER_HEALTH_CHECK_INTERVAL", "30")))
+    auto_recovery: bool = field(default_factory=lambda: os.getenv("CLUSTER_AUTO_RECOVERY", "true").lower() == "true")
+    max_retry_attempts: int = field(default_factory=lambda: int(os.getenv("CLUSTER_MAX_RETRY_ATTEMPTS", "3")))
+    default_timeout: float = field(default_factory=lambda: float(os.getenv("CLUSTER_DEFAULT_TIMEOUT", "5.0")))
+    
+    # Configurações de Comunicação Inter-Cluster
+    message_broker_enabled: bool = field(default_factory=lambda: os.getenv("MESSAGE_BROKER_ENABLED", "true").lower() == "true")
+    rest_port: int = field(default_factory=lambda: int(os.getenv("CLUSTER_REST_PORT", "8080")))
+    websocket_port: int = field(default_factory=lambda: int(os.getenv("CLUSTER_WEBSOCKET_PORT", "8081")))
+    grpc_port: int = field(default_factory=lambda: int(os.getenv("CLUSTER_GRPC_PORT", "9090")))
+    message_batch_size: int = field(default_factory=lambda: int(os.getenv("MESSAGE_BATCH_SIZE", "100")))
+    
+    # Configurações do Registry
+    registry_enabled: bool = field(default_factory=lambda: os.getenv("CLUSTER_REGISTRY_ENABLED", "true").lower() == "true")
+    auto_discovery_interval: int = field(default_factory=lambda: int(os.getenv("AUTO_DISCOVERY_INTERVAL", "300")))
+    registry_persistence: bool = field(default_factory=lambda: os.getenv("REGISTRY_PERSISTENCE", "true").lower() == "true")
+    registry_storage_path: str = field(default_factory=lambda: os.getenv("REGISTRY_STORAGE_PATH", "clusters_registry.json"))
+    
+    # Configurações de Auto-Scaling
+    auto_scaling_enabled: bool = field(default_factory=lambda: os.getenv("AUTO_SCALING_ENABLED", "true").lower() == "true")
+    scaling_analysis_interval: int = field(default_factory=lambda: int(os.getenv("SCALING_ANALYSIS_INTERVAL", "60")))
+    metrics_collection_interval: int = field(default_factory=lambda: int(os.getenv("METRICS_COLLECTION_INTERVAL", "30")))
+    default_min_agents: int = field(default_factory=lambda: int(os.getenv("DEFAULT_MIN_AGENTS", "1")))
+    default_max_agents: int = field(default_factory=lambda: int(os.getenv("DEFAULT_MAX_AGENTS", "10")))
+    
+    # Configurações de Failover
+    failover_enabled: bool = field(default_factory=lambda: os.getenv("FAILOVER_ENABLED", "true").lower() == "true")
+    failover_monitoring_interval: int = field(default_factory=lambda: int(os.getenv("FAILOVER_MONITORING_INTERVAL", "30")))
+    default_health_threshold: float = field(default_factory=lambda: float(os.getenv("DEFAULT_HEALTH_THRESHOLD", "50.0")))
+    auto_failback: bool = field(default_factory=lambda: os.getenv("AUTO_FAILBACK", "true").lower() == "true")
+    
+    # Topologias suportadas
+    supported_topologies: List[str] = field(default_factory=lambda: [
+        "star",         # Hub central com clusters conectados
+        "mesh",         # Todos clusters conectados entre si
+        "hierarchical", # Estrutura hierárquica de clusters
+        "ring",         # Clusters em anel
+        "tree"          # Estrutura de árvore
+    ])
+    
+    # Política de comunicação padrão
+    default_topology: str = field(default_factory=lambda: os.getenv("DEFAULT_CLUSTER_TOPOLOGY", "star"))
+    
+    # Limites de recursos por cluster
+    max_clusters: int = field(default_factory=lambda: int(os.getenv("MAX_CLUSTERS", "20")))
+    max_agents_per_cluster: int = field(default_factory=lambda: int(os.getenv("MAX_AGENTS_PER_CLUSTER", "50")))
+    max_connections_per_cluster: int = field(default_factory=lambda: int(os.getenv("MAX_CONNECTIONS_PER_CLUSTER", "100")))
+    
+    # Configurações específicas por tipo de cluster
+    cluster_configs: Dict[str, Dict[str, Any]] = field(default_factory=lambda: {
+        "core_cluster": {
+            "min_agents": 3,
+            "max_agents": 8,
+            "priority": 1,
+            "auto_scaling": True,
+            "failover_enabled": True,
+            "backup_clusters": ["coordination_cluster"]
+        },
+        "coordination_cluster": {
+            "min_agents": 2,
+            "max_agents": 5,
+            "priority": 1,
+            "auto_scaling": True,
+            "failover_enabled": True,
+            "backup_clusters": ["core_cluster"]
+        },
+        "memory_cluster": {
+            "min_agents": 2,
+            "max_agents": 6,
+            "priority": 2,
+            "auto_scaling": True,
+            "failover_enabled": True,
+            "backup_clusters": ["analytics_cluster"]
+        },
+        "mcp_cluster": {
+            "min_agents": 2,
+            "max_agents": 8,
+            "priority": 2,
+            "auto_scaling": True,
+            "failover_enabled": True,
+            "backup_clusters": ["discovery_cluster"]
+        },
+        "analytics_cluster": {
+            "min_agents": 1,
+            "max_agents": 5,
+            "priority": 3,
+            "auto_scaling": True,
+            "failover_enabled": True,
+            "backup_clusters": ["memory_cluster"]
+        },
+        "discovery_cluster": {
+            "min_agents": 1,
+            "max_agents": 15,
+            "priority": 3,
+            "auto_scaling": True,
+            "failover_enabled": True,
+            "backup_clusters": ["mcp_cluster"]
+        }
+    })
+    
+    def get_cluster_config(self, cluster_id: str) -> Dict[str, Any]:
+        """Retorna configuração específica de um cluster"""
+        return self.cluster_configs.get(cluster_id, {
+            "min_agents": self.default_min_agents,
+            "max_agents": self.default_max_agents,
+            "priority": 5,
+            "auto_scaling": self.auto_scaling_enabled,
+            "failover_enabled": self.failover_enabled,
+            "backup_clusters": []
+        })
+    
+    def validate_topology(self, topology: str) -> bool:
+        """Valida se topologia é suportada"""
+        return topology in self.supported_topologies
+    
+    def get_communication_ports(self) -> Dict[str, int]:
+        """Retorna portas para comunicação inter-cluster"""
+        return {
+            "rest": self.rest_port,
+            "websocket": self.websocket_port,
+            "grpc": self.grpc_port
+        }
+
+
 class UnifiedConfig:
     """Configuração principal unificada do sistema"""
     
@@ -197,6 +328,7 @@ class UnifiedConfig:
         self.neo4j = Neo4jConfig()
         self.mcp = MCPConfig()
         self.crewai = CrewAIConfig()
+        self.clusters = ClustersConfig()
         self.debug_mode = os.getenv('DEBUG_MODE', 'false').lower() == 'true'
         
         # Carregar configurações dinâmicas
@@ -361,6 +493,100 @@ class UnifiedConfig:
             "retry_backoff_factor": float(os.getenv("RETRY_BACKOFF_FACTOR", "2.0"))
         }
     
+    def get_clusters_config(self) -> Dict[str, Any]:
+        """Retorna configuração completa de clusters"""
+        return {
+            "enabled": self.clusters.enabled,
+            "orchestrator": {
+                "enabled": self.clusters.orchestrator_enabled,
+                "health_check_interval": self.clusters.health_check_interval,
+                "auto_recovery": self.clusters.auto_recovery,
+                "max_retry_attempts": self.clusters.max_retry_attempts,
+                "default_timeout": self.clusters.default_timeout
+            },
+            "communication": {
+                "message_broker_enabled": self.clusters.message_broker_enabled,
+                "ports": self.clusters.get_communication_ports(),
+                "message_batch_size": self.clusters.message_batch_size
+            },
+            "registry": {
+                "enabled": self.clusters.registry_enabled,
+                "auto_discovery_interval": self.clusters.auto_discovery_interval,
+                "persistence": self.clusters.registry_persistence,
+                "storage_path": self.clusters.registry_storage_path
+            },
+            "auto_scaling": {
+                "enabled": self.clusters.auto_scaling_enabled,
+                "analysis_interval": self.clusters.scaling_analysis_interval,
+                "metrics_collection_interval": self.clusters.metrics_collection_interval,
+                "default_limits": {
+                    "min_agents": self.clusters.default_min_agents,
+                    "max_agents": self.clusters.default_max_agents
+                }
+            },
+            "failover": {
+                "enabled": self.clusters.failover_enabled,
+                "monitoring_interval": self.clusters.failover_monitoring_interval,
+                "health_threshold": self.clusters.default_health_threshold,
+                "auto_failback": self.clusters.auto_failback
+            },
+            "topology": {
+                "default": self.clusters.default_topology,
+                "supported": self.clusters.supported_topologies
+            },
+            "limits": {
+                "max_clusters": self.clusters.max_clusters,
+                "max_agents_per_cluster": self.clusters.max_agents_per_cluster,
+                "max_connections_per_cluster": self.clusters.max_connections_per_cluster
+            },
+            "cluster_configs": self.clusters.cluster_configs
+        }
+    
+    def get_cluster_specific_config(self, cluster_id: str) -> Dict[str, Any]:
+        """Retorna configuração específica de um cluster"""
+        base_config = self.clusters.get_cluster_config(cluster_id)
+        
+        # Mesclar com configurações globais
+        return {
+            **base_config,
+            "health_check_interval": self.clusters.health_check_interval,
+            "communication_ports": self.clusters.get_communication_ports(),
+            "auto_discovery_interval": self.clusters.auto_discovery_interval,
+            "failover_health_threshold": self.clusters.default_health_threshold
+        }
+    
+    def validate_cluster_config(self, cluster_id: str) -> Dict[str, bool]:
+        """Valida configuração de um cluster específico"""
+        checks = {}
+        
+        try:
+            config = self.get_cluster_specific_config(cluster_id)
+            
+            # Validar limites
+            checks["min_agents_valid"] = 1 <= config.get("min_agents", 1) <= self.clusters.max_agents_per_cluster
+            checks["max_agents_valid"] = config.get("min_agents", 1) <= config.get("max_agents", 10) <= self.clusters.max_agents_per_cluster
+            checks["priority_valid"] = 1 <= config.get("priority", 1) <= 10
+            
+            # Validar portas
+            ports = config.get("communication_ports", {})
+            checks["ports_available"] = all(1024 <= port <= 65535 for port in ports.values())
+            
+            # Validar backup clusters
+            backup_clusters = config.get("backup_clusters", [])
+            checks["backup_clusters_exist"] = all(
+                backup_id in self.clusters.cluster_configs 
+                for backup_id in backup_clusters
+            )
+            
+            # Validar topologia
+            checks["topology_supported"] = self.clusters.validate_topology(self.clusters.default_topology)
+            
+        except Exception as e:
+            logger.error(f"Erro na validação do cluster {cluster_id}: {e}")
+            checks["validation_error"] = False
+        
+        return checks
+    
     def validate_environment(self) -> Dict[str, bool]:
         """Valida se o ambiente está configurado corretamente"""
         checks = {}
@@ -437,6 +663,18 @@ class UnifiedConfig:
                 "auth_enabled": self.security.enable_auth,
                 "rate_limit": self.security.api_rate_limit
             },
+            "clusters": {
+                "enabled": self.clusters.enabled,
+                "orchestrator_enabled": self.clusters.orchestrator_enabled,
+                "message_broker_enabled": self.clusters.message_broker_enabled,
+                "registry_enabled": self.clusters.registry_enabled,
+                "auto_scaling_enabled": self.clusters.auto_scaling_enabled,
+                "failover_enabled": self.clusters.failover_enabled,
+                "default_topology": self.clusters.default_topology,
+                "max_clusters": self.clusters.max_clusters,
+                "communication_ports": self.clusters.get_communication_ports(),
+                "cluster_count": len(self.clusters.cluster_configs)
+            },
             "debug_mode": self.debug_mode
         }
 
@@ -469,11 +707,38 @@ if __name__ == "__main__":
     cfg = get_unified_config()
     print(json.dumps(cfg.to_dict(), indent=2))
     
+    # Testar configuração de clusters
+    print("\n🔗 Testando configuração de clusters...")
+    clusters_config = cfg.get_clusters_config()
+    print(f"Sistema de clusters: {'✅ HABILITADO' if clusters_config['enabled'] else '❌ DESABILITADO'}")
+    print(f"Orquestrador: {'✅' if clusters_config['orchestrator']['enabled'] else '❌'}")
+    print(f"Message Broker: {'✅' if clusters_config['communication']['message_broker_enabled'] else '❌'}")
+    print(f"Auto-scaling: {'✅' if clusters_config['auto_scaling']['enabled'] else '❌'}")
+    print(f"Failover: {'✅' if clusters_config['failover']['enabled'] else '❌'}")
+    
+    # Testar configurações específicas de clusters
+    print("\n📋 Validando clusters individuais...")
+    for cluster_id in cfg.clusters.cluster_configs.keys():
+        validation = cfg.validate_cluster_config(cluster_id)
+        all_valid = all(validation.values())
+        emoji = "✅" if all_valid else "⚠️"
+        print(f"{emoji} {cluster_id}: {sum(validation.values())}/{len(validation)} checks OK")
+        
+        if not all_valid:
+            failed_checks = [check for check, result in validation.items() if not result]
+            print(f"   Falhas: {', '.join(failed_checks)}")
+    
     # Testar validação do ambiente
     print("\n🔍 Validando ambiente...")
     env_status = cfg.validate_environment()
     for component, status in env_status.items():
         emoji = "✅" if status else "❌"
         print(f"{emoji} {component}: {'OK' if status else 'FALHA'}")
+    
+    # Mostrar configurações de comunicação
+    print("\n📡 Portas de comunicação:")
+    comm_ports = cfg.clusters.get_communication_ports()
+    for protocol, port in comm_ports.items():
+        print(f"  {protocol.upper()}: {port}")
     
     print("\n✅ Configurações unificadas testadas com sucesso!")
