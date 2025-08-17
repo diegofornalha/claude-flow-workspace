@@ -1,7 +1,8 @@
-PROJETOS/*
 node_modules/*
 .swarm/*
 .claude-flow/metrics/*
 projects/*
 logging/*
 statsig/*
+todos/*
+shell-snapshots/*
