@@ -1,3 +1,9 @@
 [submodule "mcp-neo4j-agent-memory"]
 	path = mcp-neo4j-agent-memory
 	url = https://github.com/diegofornalha/mcp-neo4j-agent-memory.git
+[submodule "FlowActions"]
+	path = FlowActions
+	url = https://github.com/diegofornalha/FlowActions.git
+[submodule "chat-app-claude-code-sdk"]
+	path = chat-app-claude-code-sdk
+	url = https://github.com/diegofornalha/chat-app-claude-code-sdk.git
