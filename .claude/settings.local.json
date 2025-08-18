@@ -1,6 +1,19 @@
 {
+  "permissions": {
+    "allow": [
+      "mcp__smithery-ai-filesystem__directory_tree",
+      "mcp__smithery-ai-filesystem__list_directory",
+      "mcp__smithery-ai-filesystem__read_multiple_files",
+      "mcp__smithery-ai-filesystem__search_files",
+      "mcp__neo4j-memory__create_memory",
+      "mcp__smithery-ai-filesystem__read_text_file",
+      "mcp__neo4j-memory__create_connection",
+      "mcp__neo4j-memory__search_memories",
+      "mcp__neo4j-memory__update_memory"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "neo4j-memory"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }
