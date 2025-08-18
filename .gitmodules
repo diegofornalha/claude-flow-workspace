@@ -4,3 +4,6 @@
 [submodule "chat-app-claude-code-sdk"]
 	path = chat-app-claude-code-sdk
 	url = https://github.com/diegofornalha/chat-app-claude-code-sdk.git
+[submodule "ai-sdk-provider"]
+	path = ai-sdk-provider
+	url = ./ai-sdk-provider
