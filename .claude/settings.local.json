@@ -77,7 +77,16 @@
       "Bash(./run.sh)",
       "Bash(open http://localhost:9999)",
       "Bash(open http://localhost:12000)",
-      "Bash(open http://localhost:3000)"
+      "Bash(open http://localhost:3000)",
+      "Bash(A2A_UI_PORT=12000 python main.py)",
+      "Bash(PORT=12000 python test_ui_integration.py)",
+      "Bash(mesop:*)",
+      "Bash(git reset:*)",
+      "Bash(./start_a2a_ui.sh:*)",
+      "Bash(USE_UV=true ./start_a2a_ui.sh)",
+      "Bash(open http://localhost:12000/agents)",
+      "Bash(open http://localhost:12000/task_list)",
+      "Bash(PORT=8085 python:*)"
     ],
     "deny": [],
     "ask": []
