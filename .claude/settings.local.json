@@ -60,7 +60,10 @@
       "mcp__neo4j-memory__create_memory",
       "mcp__neo4j-memory__create_connection",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:a2aproject.github.io)",
+      "WebFetch(domain:a2a-protocol.org)",
+      "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": [],
     "ask": []
