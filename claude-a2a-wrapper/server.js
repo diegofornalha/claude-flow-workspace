@@ -4,12 +4,12 @@
  * Expõe Claude Code SDK como agente A2A com integração MCP e Neo4j Memory
  */
 
-import Fastify from 'fastify';
-import cors from '@fastify/cors';
-import websocket from '@fastify/websocket';
-import { v4 as uuidv4 } from 'uuid';
-import dotenv from 'dotenv';
-import { query } from '@anthropic-ai/claude-code';
+const Fastify = require('fastify');
+const cors = require('@fastify/cors');
+const websocket = require('@fastify/websocket');
+const { v4: uuidv4 } = require('uuid');
+const dotenv = require('dotenv');
+const { query } = require('@anthropic-ai/claude-code');
 
 dotenv.config();
 
@@ -113,11 +113,10 @@ class ClaudeA2AAgent {
         level: process.env.LOG_LEVEL || 'info'
       }
     });
-
-    this.setupServer();
   }
 
   async setupServer() {
+    console.log('🔧 Configurando servidor...');
     // Registrar plugins
     await this.server.register(cors, {
       origin: true,
@@ -137,8 +136,8 @@ class ClaudeA2AAgent {
   }
 
   setupA2ARoutes() {
-    // Informações do agente (Agent Card)
-    this.server.get('/', async (request, reply) => {
+    // Agent Card Padrão A2A v2.0
+    this.server.get('/.well-known/agent.json', async (request, reply) => {
       return {
         agent: {
           id: this.agentId,
@@ -147,25 +146,38 @@ class ClaudeA2AAgent {
           version: '1.0.0'
         },
         protocol: {
-          version: '2.0',
-          type: 'a2a'
+          version: 'a2a/2.0',
+          features: [
+            'capabilities_negotiation',
+            'streaming_responses',
+            'p2p_discovery',
+            'autonomous_learning',
+            'mcp_integration'
+          ]
         },
-        capabilities: [
-          'natural_language_processing',
-          'code_generation',
-          'task_execution',
-          'continuous_learning',
-          'streaming_responses',
-          'multi_session_support',
-          'mcp_integration'
-        ],
+        capabilities: {
+          core: [
+            'natural_language_processing',
+            'code_generation',
+            'task_execution',
+            'multi_session_support'
+          ],
+          advanced: [
+            'continuous_learning',
+            'autonomous_decision_making',
+            'streaming_responses',
+            'mcp_integration',
+            'memory_augmented_generation'
+          ]
+        },
         endpoints: {
+          base_url: `http://localhost:${process.env.PORT || 8001}`,
+          agent_card: '/.well-known/agent.json',
+          health: '/health',
+          negotiate: '/negotiate',
+          discover: '/discover',
           tasks: '/tasks',
-          decide: '/decide',
-          learn: '/learn',
-          adapt: '/adapt',
-          consensus: '/consensus',
-          knowledge: '/knowledge',
+          streaming: '/stream',
           claude: {
             chat: '/claude/chat',
             stream: '/claude/stream',
@@ -185,12 +197,92 @@ class ClaudeA2AAgent {
       };
     });
 
+    // Endpoint raiz para compatibilidade
+    this.server.get('/', async (request, reply) => {
+      return {
+        message: 'Claude A2A Agent',
+        agent_card: '/.well-known/agent.json',
+        status: 'online'
+      };
+    });
+
     // Health check
     this.server.get('/health', async () => ({
       status: 'healthy',
       agent_id: this.agentId,
       uptime: this.calculateUptime()
     }));
+
+    // Capabilities Negotiation - Padrão A2A
+    this.server.post('/negotiate', async (request, reply) => {
+      const { capabilities: peerCapabilities, agent_id: peerId } = request.body;
+      
+      const ourCapabilities = [
+        'natural_language_processing',
+        'code_generation', 
+        'task_execution',
+        'continuous_learning',
+        'streaming_responses',
+        'multi_session_support',
+        'mcp_integration',
+        'memory_augmented_generation'
+      ];
+
+      const compatible = peerCapabilities ? 
+        ourCapabilities.filter(cap => peerCapabilities.includes(cap)) : [];
+      
+      const learningOpportunities = peerCapabilities ?
+        peerCapabilities.filter(cap => !ourCapabilities.includes(cap)) : [];
+
+      return {
+        agent_id: this.agentId,
+        negotiation_result: {
+          compatible_capabilities: compatible,
+          offered_capabilities: ourCapabilities,
+          learning_opportunities: learningOpportunities,
+          collaboration_level: compatible.length > 3 ? 'high' : 
+                             compatible.length > 1 ? 'medium' : 'low'
+        },
+        proposed_collaboration: {
+          code_assistance: true,
+          knowledge_sharing: true,
+          task_delegation: true,
+          mcp_resource_sharing: true
+        }
+      };
+    });
+
+    // P2P Discovery - Padrão A2A
+    this.server.get('/discover', async (request, reply) => {
+      return {
+        agent_id: this.agentId,
+        discovery_info: {
+          agent_type: 'assistant',
+          capabilities: [
+            'natural_language_processing',
+            'code_generation',
+            'task_execution', 
+            'mcp_integration'
+          ],
+          availability: 'online',
+          load: this.tasks.size / 100, // 100 = estimated max concurrent tasks
+          preferred_protocols: ['a2a/2.0'],
+          peer_requirements: {
+            min_trust_level: 0.8,
+            compatible_capabilities: ['task_execution', 'knowledge_sharing']
+          }
+        },
+        network_info: {
+          current_peers: this.peers.size,
+          max_peers: 100,
+          discovery_timestamp: new Date().toISOString()
+        },
+        mcp_services: {
+          available: ['neo4j-memory', 'filesystem', 'desktop-commander'],
+          shareable: true
+        }
+      };
+    });
 
     // Status detalhado
     this.server.get('/status', async () => ({
@@ -563,6 +655,71 @@ class ClaudeA2AAgent {
       };
     });
 
+    // Server-Sent Events para streaming - Padrão A2A
+    this.server.get('/stream/:taskId', async (request, reply) => {
+      const { taskId } = request.params;
+      
+      reply.raw.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Cache-Control'
+      });
+
+      const task = this.tasks.get(taskId);
+      if (!task) {
+        reply.raw.write(`data: ${JSON.stringify({ error: 'Task not found' })}\n\n`);
+        reply.raw.end();
+        return;
+      }
+
+      // Simular progresso de streaming
+      const sendProgress = (progress, status, data = null) => {
+        const eventData = {
+          task_id: taskId,
+          progress,
+          status,
+          timestamp: new Date().toISOString(),
+          agent_id: this.agentId
+        };
+        
+        if (data) eventData.data = data;
+        
+        reply.raw.write(`data: ${JSON.stringify(eventData)}\n\n`);
+      };
+
+      // Simular execução de tarefa com progresso
+      const executeWithProgress = async () => {
+        try {
+          sendProgress(0, 'starting');
+          
+          sendProgress(25, 'processing', 'Analyzing task...');
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          
+          sendProgress(50, 'processing', 'Generating response...');
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          
+          sendProgress(75, 'processing', 'Finalizing...');
+          await new Promise(resolve => setTimeout(resolve, 500));
+          
+          sendProgress(100, 'completed', task.result || 'Task completed successfully');
+          
+          reply.raw.write(`event: close\ndata: ${JSON.stringify({ status: 'stream_ended' })}\n\n`);
+          reply.raw.end();
+          
+        } catch (error) {
+          reply.raw.write(`data: ${JSON.stringify({ 
+            error: error.message, 
+            status: 'failed' 
+          })}\n\n`);
+          reply.raw.end();
+        }
+      };
+
+      executeWithProgress();
+    });
+
     this.server.delete('/claude/sessions/:sessionId', async (request, reply) => {
       const { sessionId } = request.params;
       
@@ -764,6 +921,7 @@ class ClaudeA2AAgent {
 
   async start(port = 8001) {
     try {
+      await this.setupServer();
       await this.server.listen({ port, host: '0.0.0.0' });
       console.log(`🚀 Claude A2A Agent running on http://localhost:${port}`);
       console.log(`📋 Agent ID: ${this.agentId}`);
@@ -776,6 +934,11 @@ class ClaudeA2AAgent {
 }
 
 // Inicializar e executar
+console.log('🚀 Iniciando Claude A2A Wrapper...');
 const agent = new ClaudeA2AAgent();
 const port = process.env.PORT || 8001;
-agent.start(port);
+console.log(`📡 Tentando iniciar na porta ${port}...`);
+agent.start(port).catch(err => {
+  console.error('❌ Erro ao iniciar servidor:', err);
+  process.exit(1);
+});

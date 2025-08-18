@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Wrapper A2A para Claude Code SDK com integração MCP",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js"
