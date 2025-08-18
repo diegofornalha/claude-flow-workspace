@@ -63,7 +63,21 @@
       "Bash(git commit:*)",
       "WebFetch(domain:a2aproject.github.io)",
       "WebFetch(domain:a2a-protocol.org)",
-      "WebFetch(domain:docs.anthropic.com)"
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(git submodule:*)",
+      "Bash(./run_a2a_claude.sh:*)",
+      "Bash(python:*)",
+      "Bash(uv pip install:*)",
+      "Bash(pkill:*)",
+      "Bash(uv pip:*)",
+      "mcp__neo4j-memory__update_memory",
+      "Bash(PORT=8005 python:*)",
+      "Bash(PORT=12000 python backend_server.py)",
+      "Bash(A2A_UI_PORT=3000 python main.py)",
+      "Bash(./run.sh)",
+      "Bash(open http://localhost:9999)",
+      "Bash(open http://localhost:12000)",
+      "Bash(open http://localhost:3000)"
     ],
     "deny": [],
     "ask": []
