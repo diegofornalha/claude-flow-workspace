@@ -10,3 +10,6 @@
 [submodule "a2a-ui"]
 	path = a2a-ui
 	url = https://github.com/diegofornalha/a2a-ui.git
+[submodule "agents-a2a"]
+	path = agents-a2a
+	url = https://github.com/diegofornalha/agents-a2a.git
