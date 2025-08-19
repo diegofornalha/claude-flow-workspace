@@ -1,19 +1,36 @@
 {
   "permissions": {
     "allow": [
+      "mcp__ruv-swarm",
+      "mcp__claude-flow",
       "mcp__smithery-ai-filesystem__directory_tree",
       "mcp__smithery-ai-filesystem__list_directory",
       "mcp__smithery-ai-filesystem__read_multiple_files",
       "mcp__smithery-ai-filesystem__search_files",
-      "mcp__neo4j-memory__create_memory",
       "mcp__smithery-ai-filesystem__read_text_file",
+      "mcp__neo4j-memory__create_memory",
       "mcp__neo4j-memory__create_connection",
       "mcp__neo4j-memory__search_memories",
-      "mcp__neo4j-memory__update_memory"
-    ]
+      "mcp__neo4j-memory__update_memory",
+      "mcp__neo4j-memory__list_memory_labels",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run build:frontend:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm start)",
+      "Bash(curl:*)",
+      "Bash(npm run dev:*)",
+      "Bash(lsof:*)",
+      "Bash(npm run status:*)",
+      "Bash(node:*)",
+      "Bash(sed:*)"
+    ],
+    "deny": []
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "neo4j-memory"
+    "neo4j-memory",
+    "claude-flow",
+    "ruv-swarm"
   ]
 }
