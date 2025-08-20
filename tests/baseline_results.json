@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-20T06:50:24.662Z",
+  "tests": [
+    {
+      "name": "single_message",
+      "input": {
+        "id": "test-1755672624684",
+        "content": "Teste de mensagem única",
+        "timestamp": 1755672624684
+      },
+      "messagesReceived": 0,
+      "messages": [],
+      "hasDuplication": false,
+      "duplicateCount": 0
+    },
+    {
+      "name": "rapid_messages",
+      "input": [
+        {
+          "id": "rapid-1-1755672627687",
+          "content": "Mensagem rápida 1"
+        },
+        {
+          "id": "rapid-2-1755672627687",
+          "content": "Mensagem rápida 2"
+        },
+        {
+          "id": "rapid-3-1755672627687",
+          "content": "Mensagem rápida 3"
+        }
+      ],
+      "expectedMessages": 3,
+      "actualMessages": 0,
+      "messagesReceived": [],
+      "hasDuplication": false,
+      "duplicateCount": 0
+    },
+    {
+      "name": "queue_state",
+      "error": "Timeout - nenhuma resposta da fila",
+      "queueLength": 0
+    }
+  ],
+  "summary": {
+    "totalMessages": 0,
+    "duplicateMessages": 0,
+    "queueLength": 0,
+    "errors": [],
+    "hasDuplicationIssues": false,
+    "testsPassed": 2,
+    "testsTotal": 3
+  }
+}
