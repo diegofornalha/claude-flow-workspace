@@ -1,0 +1,75 @@
+{
+  "timestamp": "2025-08-20T06:53:03.301Z",
+  "frontend_url": "http://localhost:3002",
+  "backend_url": "http://localhost:8081",
+  "tests": [
+    {
+      "name": "message_deduplication",
+      "status": "simulated",
+      "findings": [
+        "✅ useMessageDeduplication hook encontrado",
+        "✅ Lógica de deduplicação identificada",
+        "✅ useMessageQueue hook encontrado",
+        "✅ Geração de ID único implementada",
+        "✅ Sistema de fila implementado"
+      ],
+      "recommendations": []
+    },
+    {
+      "name": "ui_components",
+      "status": "simulated",
+      "components_found": [
+        "MessageQueue",
+        "ProcessingIndicator",
+        "SystemMetrics",
+        "UISettings",
+        "AgentSelector"
+      ],
+      "components_missing": [],
+      "issues": []
+    },
+    {
+      "name": "state_management",
+      "status": "simulated",
+      "hooks_found": [
+        "useMessageDeduplication.ts",
+        "useMessageManager.ts",
+        "useMessageQueue.ts"
+      ],
+      "context_found": true,
+      "state_issues": [
+        "Muitos useEffect detectados: 13 - pode causar re-renders"
+      ],
+      "socket_connections": 1,
+      "use_effects": 13,
+      "socket_emits": 6
+    }
+  ],
+  "console_logs": [],
+  "network_requests": [],
+  "errors": [
+    "ERROR in src/backup-removal-queue-20250820_034658/App.tsx:6:27",
+    "TS2307: Cannot find module './components/AgentSelector' or its corresponding type declarations.",
+    "ERROR in src/backup-removal-queue-20250820_034658/App.tsx:7:37",
+    "TS2307: Cannot find module './components/ProcessingIndicator/ProcessingIndicator' or its corresponding type declarations.",
+    "ERROR in src/backup-removal-queue-20250820_034658/App.tsx:8:28",
+    "TS2307: Cannot find module './components/UISettings/UISettings' or its corresponding type declarations.",
+    "ERROR in src/backup-removal-queue-20250820_034658/App.tsx:9:27",
+    "TS2307: Cannot find module './components/SystemMetrics/SystemMetrics' or its corresponding type declarations.",
+    "ERROR in src/backup-removal-queue-20250820_034658/App.tsx:10:26",
+    "TS2307: Cannot find module './components/MessageQueue/MessageQueue' or its corresponding type declarations.",
+    "ERROR in src/backup-removal-queue-20250820_034658/App.tsx:11:48",
+    "TS2307: Cannot find module './hooks/useMessageQueue' or its corresponding type declarations.",
+    "ERROR in src/backup-removal-queue-20250820_034658/App.tsx:1021:34",
+    "ERROR in src/backup-removal-queue-20250820_034658/App.tsx:2120:30",
+    "ERROR in src/backup-removal-queue-20250820_034658/MessageQueue.tsx:2:31",
+    "TS2307: Cannot find module '../../hooks/useMessageQueue' or its corresponding type declarations."
+  ],
+  "summary": {
+    "total_tests": 0,
+    "passed_tests": 0,
+    "failed_tests": 0,
+    "duplicate_messages": 0,
+    "queue_operations": 0
+  }
+}

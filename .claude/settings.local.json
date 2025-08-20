@@ -23,7 +23,14 @@
       "Bash(lsof:*)",
       "Bash(npm run status:*)",
       "Bash(node:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "WebFetch(domain:conductor.build)",
+      "Bash(npm install)",
+      "Bash(git checkout:*)",
+      "Bash(git restore:*)",
+      "Bash(pkill:*)"
     ],
     "deny": []
   },
