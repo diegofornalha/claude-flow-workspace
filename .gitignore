@@ -37,3 +37,4 @@ hive-mind-prompt-*.txt
 .roomodes
 memory/*
 scripts/*
+chat-app-claude-code-sdk/.swarm/*

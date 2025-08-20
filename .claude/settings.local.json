@@ -30,7 +30,15 @@
       "Bash(npm install)",
       "Bash(git checkout:*)",
       "Bash(git restore:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(gh pr create:*)",
+      "Bash(gh pr view:*)",
+      "Bash(git stash:*)",
+      "Bash(git clean:*)",
+      "Bash(git reset:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   },
