@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh-keygen:*)",
+      "Bash(sudo pmset:*)",
+      "Bash(caffeinate:*)",
+      "Bash(pmset:*)",
+      "Bash(chmod:*)",
+      "Bash(/tmp/keep_mac_awake.sh:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

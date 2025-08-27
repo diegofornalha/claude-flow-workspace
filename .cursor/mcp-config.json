@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "rag-server": {
+      "command": "python3",
+      "args": ["/Users/agents/.claude/mcp-rag-server/rag_server.py"],
+      "env": {
+        "PYTHONPATH": "/Users/agents/.claude/mcp-rag-server"
+      }
+    }
+  }
+} 
